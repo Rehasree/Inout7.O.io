@@ -54,3 +54,71 @@ const data = {
 }
 
 module.exports = data;
+
+
+
+
+
+
+
+
+
+// < !DOCTYPE html >
+//     <html lang="en">
+
+//         <head>
+//             <meta charset="UTF-8">
+//                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//                     <title>Survey</title>
+// </head>
+
+//                 <body>
+//                     <h1>This is survey corner for <%= age %> age members </h1>
+
+//                     <form action="/results" method="POST">
+//                         <% if(age <= 15){ %>
+
+        // <% for(let d of data1){ %>
+        // <h3><%= d.question %> </h3>
+        // <% d.options.forEach(opt => { %>
+        // <li>
+        //     <input type="radio" id="val" name=<%= d._id %> value="<%= opt %> " required>
+        //     <label for="val"><%= opt %></label>
+        // </li>
+        // <% }) %>
+        // <% } %>
+
+//         <% } else if (age > 15 && age <=18){ %>
+
+//         <% for(let d of data2){ %>
+//         <h3><%= d.question %> </h3>
+//         <% d.options.forEach(opt => { %>
+//         <li>
+//             <input type="radio" id="val" name=<%= d._id %> value="<%= opt %> " required>
+//             <label for="val"><%= opt %></label>
+//         </li>
+//         <% }) %>
+//         <% } %>
+
+//         <%} else {%>
+
+//         <% for(let d of data3){ %>
+//         <h3><%= d.question %> </h3>
+//         <% d.options.forEach(opt => { %>
+//         <li>
+//             <input type="radio" id="val" name=<%= d._id %> value="<%= opt %> " required>
+//             <label for="val"><%= opt %></label>
+//         </li>
+//         <% }) %>
+//         <% } %>
+
+//         <% } %>
+//         <button>Submit</button>
+//                     </form>
+
+//                 </body>
+
+// </html>
+
+
+
