@@ -81,7 +81,7 @@
                     <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                         <h2 id="heading">Detector</h2>
                         <p>Fill all form field to go to next step</p>
-                        <form id="msform">
+                        <form id="msform" action="/output.html" method="POST">
                             <!-- progressbar -->
                             <ul id="progressbar">
                                 <li class="active" id="account"><strong>Level-1</strong></li>
@@ -90,7 +90,7 @@
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                                     aria-valuemin="0" aria-valuemax="100"></div>
-                            </div> <br> <!-- fieldsets -->
+                            </div> <br>
 
                             <fieldset>
                                 <div class="form-card">
@@ -103,25 +103,54 @@
                                         </div>
                                         <!--ADD ALL YOUR QUESTIONS HEREEEEEE !!!!!!!!!!!!! HEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHE-->
                                     </div>
-                                    
-                                    <% if(age <= 15){ %> 
+
+                                    <% if(age <=15){ %>
                                         <% for(let d of data1){ %>
-                                            <label class="fieldlabels"> <%= d.question %>  </label>
+                                            <label class="fieldlabels">
+                                                <%= d.question %>
+                                            </label>
                                             <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
                                                 <% d.options.forEach(opt=> { %>
-                                                    
-                                                        <label class="options" for="val">
-                                                            <%= opt %>
-                                                        
-                                                        <input type="radio" id="val" name="<%=d._id %>" value="<%= opt %> " >
+                                                    <label class="options" for="val">
+                                                        <%= opt %>
+                                                        <input type="radio" id="val" name=<%=d._id %> value="<%= opt %>" required>
                                                         <span class="checkmark"></span>
-                                                        </label>
+                                                    </label>
                                                 <% }) %>
                                             </div>
-                                            
+                                        <% } %>
+                                    <% } else if (age > 15 && age <= 18) { %>
+                                        <% for(let d of data2){ %>
+                                            <label class="fieldlabels">
+                                                <%= d.question %>
+                                            </label>
+                                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                                <% d.options.forEach(opt=> { %>
+                                                    <label class="options" for="val">
+                                                        <%= opt %>
+                                                            <input type="radio" id="val" name=<%=d._id %> value="<%= opt %>" required>
+                                                            <span class="checkmark"></span>
+                                                    </label>
+                                                <% }) %>
+                                            </div>
+                                        <% } %>
+                                    <% } else { %> 
+                                        <% for(let d of data3){ %>
+                                            <label class="fieldlabels">
+                                                <%= d.question %>
+                                            </label>
+                                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                                <% d.options.forEach(opt=> { %>
+                                                    <label class="options" for="val">
+                                                        <%= opt %>
+                                                            <input type="radio" id="val" name=<%=d._id %> value="<%= opt %>" required>
+                                                            <span class="checkmark"></span>
+                                                    </label>
+                                                <% }) %>
+                                            </div>
                                         <% } %>
                                     <% } %> 
-
+                                     
                                 </div>
                                 <!--HEHEHEHHEHEHEHEHHEHEHEHHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEH-->
                                 <input type="button" name="next" class="next action-button" value="submit" />
@@ -145,16 +174,16 @@
                                     <div class="row justify-content-center">
                                         <div class="col-7 text-center">
                                             <h5 class="purple-text text-center">You Have Successfully Completed</h5>
-                                            <h5><a href="output.html">Click here to check your results</a></h5>
+                                            <!-- <h5><a href="output.html">Click here to check your results</a></h5> -->
+                                            <button class="next action-button">Submit..</button>
                                         </div>
                                     </div>
                                 </div>
-                            </fieldset>
+                            </fieldset> 
                         </form>
                     </div>
                 </div>
             </div>
-
         </div>
 
     </section><!-- End Hero -->
