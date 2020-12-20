@@ -6,4 +6,6 @@ This repo contains the code that relates to a website wherein we can get some su
 * Your age will be asked which will be used to predict your standards in present times.
 * Then you will be asked a bit of questions that will be used to analize the way you are thinking.
 * According to your answers we will predict which path best suites you and you will be provided some articals based on that path.
-* If you are intrested go through that articals refer, search more on internet etc.
+* If you are intrested go through that articals refer, search more on internet etc. and proceed a head.
+
+The website is deployed at https://safe-oasis-09227.herokuapp.com/. 
