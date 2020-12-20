@@ -49,10 +49,14 @@ app.get("/questionspage.html", async (req, res) => {
 });
 
 // Show route for the results 
-app.post("/results", (req, res) => {
+app.post("/output.html", (req, res) => {
     const info = req.body;
     res.render("result", { info });
 });
+
+app.get("*", (req, res) => {
+    res.send("404: An Error Occured")
+})
 
 app.listen(3000, () => {
     console.log("Server started...");
