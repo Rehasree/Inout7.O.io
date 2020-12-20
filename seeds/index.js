@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config()
+}
+
 const mongoose = require("mongoose");
 const data = require("./data");
 const Q15 = require("../models/q15");
@@ -5,7 +9,9 @@ const Q18 = require("../models/q18");
 const Q21 = require("../models/q21");
 
 // mongoose setup
-mongoose.connect("mongodb://localhost:27017/Project", {
+dbURL = process.env.DB_URL || "mongodb://localhost:27017/Project";
+
+mongoose.connect(dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
